@@ -18,7 +18,7 @@
 
 Here’s an animated GIF that perfectly captures how I feel about my university studies:
 
-![University Stress](https://media.tenor.com/5LTq1t7y6eAAAAAC/stressed-stress.gif)
+![University Stress]([https://media.tenor.com/5LTq1t7y6eAAAAAC/stressed-stress.gif](https://hgic.clemson.edu/wp-content/uploads/2019/04/examples-of-common-factors-that-can-lead-to-stress-828x828.jpeg))
 
 ---
 
