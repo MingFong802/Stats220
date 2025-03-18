@@ -13,5 +13,5 @@
 * Chocolate
 * chicken
 
-*A meme that captures how I currently feel about my university studies is* ![GitHub]
-(https://tenor.com/zh-CN/view/hyperventilate-cant-breathe-hyperventilation-sheldon-cooper-gif-8099902463689135266)
+*A meme that captures how I currently feel about my university studies is* 
+![I want pass](https://tenor.com/zh-CN/view/hyperventilate-cant-breathe-hyperventilation-sheldon-cooper-gif-8099902463689135266)
