@@ -13,5 +13,6 @@
 * Chocolate
 * Fried Chicken
 
+workingBunny <- image_read("https://gifdb.com/gif/school-stress-sad-molang-bunny-q43jdiew6ekv076z.html") %>% image_scale(200)
 *A meme that captures how I currently feel about my university studies is* 
 ![Breath](https://tenor.com/zh-CN/view/hyperventilate-cant-breathe-hyperventilation-sheldon-cooper-gif-8099902463689135266)
