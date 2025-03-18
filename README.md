@@ -20,8 +20,6 @@ Here’s an animated GIF that perfectly captures how I feel about my university 
 
 ![University Stress](https://media.tenor.com/5LTq1t7y6eAAAAAC/stressed-stress.gif)
 
-*Feeling overwhelmed? Check out this [guide to managing stress](https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/stress-relief/art-20044456) from the Mayo Clinic.*
-
 ---
 
 ### About This Repo
