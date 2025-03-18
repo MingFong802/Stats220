@@ -1,6 +1,6 @@
 # Stats220
 
-## This is my repo for STATS 220.
+## This is my repo for STATS 220
 
 **A little about me:**
 
@@ -8,12 +8,24 @@
 - I am taking STATS 220 because this is a very useful course for my future career.
 - I am interested in learning about new technology.
 
-*My favorite foods:*
-* Coffee
-* Chocolate
-* Fried Chicken
+### My Favorite Foods
 
-workingBunny <- image_read("https://gifdb.com/gif/school-stress-sad-molang-bunny-q43jdiew6ekv076z.html") %>% image_scale(200)
+1. Coffee
+2. Chocolate
+3. Fried Chicken
 
-*A meme that captures how I currently feel about my university studies is* 
-![Breath](https://tenor.com/zh-CN/view/hyperventilate-cant-breathe-hyperventilation-sheldon-cooper-gif-8099902463689135266)
+### A Meme That Captures How I Feel About University
+
+Here’s an animated GIF that perfectly captures how I feel about my university studies:
+
+![University Stress](https://media.tenor.com/5LTq1t7y6eAAAAAC/stressed-stress.gif)
+
+*Feeling overwhelmed? Check out this [guide to managing stress](https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/stress-relief/art-20044456) from the Mayo Clinic.*
+
+---
+
+### About This Repo
+
+This repository is for my work in **STATS 220**, where I’ll be learning about data visualization and communication. I’m excited to explore new tools and techniques to make data more engaging and understandable.
+
+*Stay tuned for more updates!*
