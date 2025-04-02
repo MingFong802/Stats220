@@ -1,0 +1,158 @@
+---
+title: Meal Preparation Analysis Report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+library(tidyverse)
+library(ggplot2)
+```
+
+```{css}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+.bar-plot {
+  margin-bottom: 30px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.summary-box {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-left: 4px solid #3498db;
+  margin: 20px 0;
+}
+```
+
+## What's going on with this data?
+
+This report examines cooking habits by analyzing preparation times for different meal types (breakfast, lunch, dinner, snacks) and comparing weekday versus weekend cooking patterns. The data helps understand how people allocate time for meal preparation during different parts of the week.
+
+```{r}
+csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vShQErnupr9LMPuNW6AD02d_W7tKtnMl6GZJRhYaYuHccfEuqzs2t2nln-rWQA511NdpPD5YwWuI0ev/pub?gid=1491093927&single=true&output=csv"
+latest_data <- read_csv(csv_file) %>%
+  rename(prep_time = 2,
+         weekend_weekday = 3,
+         meal_type = 4)
+
+# Summary values
+round(latest_data $ prep_time %>% mean(), 1)
+max(latest_data $ prep_time)
+min(latest_data $ prep_time)
+```
+
+```{r}
+# Calculate summary statistics
+mean_prep <- round(mean(latest_data$prep_time), 1)
+max_prep <- max(latest_data$prep_time)
+min_prep <- min(latest_data$prep_time)
+
+meal_counts <- latest_data %>%
+  count(meal_type) %>%
+  arrange(desc(n))
+
+day_counts <- latest_data %>%
+  count(weekend_weekday)
+
+```
+
+
+```{r}
+# Bar charts
+ggplot(latest_data, aes(x = meal_type)) +
+  geom_bar(fill = "skyblue") +
+  labs(title = "Frequency of Meal Types",
+       x = "Meal Type",
+       y = "Count")
+
+ggplot(latest_data, aes(x = weekend_weekday)) +
+  geom_bar(fill = "salmon") +
+  labs(title = "Meals Prepared: Weekday vs Weekend",
+       x = "Day Type",
+       y = "Count")
+```
+
+```{r}
+# Dynamic summary comment
+cat(paste0("<div class='summary-box'>",
+           "The average meal preparation time was ", mean_prep, " minutes, ",
+           "ranging from ", min_prep, " to ", max_prep, " minutes across all meals.",
+           "</div>"))
+```
+
+```{r}
+# Meal type frequency plot
+ggplot(latest_data, aes(x = fct_infreq(meal_type))) +
+  geom_bar(fill = "#3498db", alpha = 0.8) +
+  labs(title = "Frequency of Different Meal Types",
+       x = "Meal Type",
+       y = "Count") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+# Dynamic meal frequency comment
+cat(paste0("<div class='summary-box'>",
+           "The most common meal type was ", meal_counts$meal_type[1], 
+           " (", meal_counts$n[1], " instances), while ", 
+           meal_counts$meal_type[nrow(meal_counts)], " was prepared least often ",
+           "(", meal_counts$n[nrow(meal_counts)], " times).",
+           "</div>"))
+```
+
+```{r}
+# Dynamic meal frequency comment
+cat(paste0("<div class='summary-box'>",
+           "The most common meal type was ", meal_counts$meal_type[1], 
+           " (", meal_counts$n[1], " instances), while ", 
+           meal_counts$meal_type[nrow(meal_counts)], " was prepared least often ",
+           "(", meal_counts$n[nrow(meal_counts)], " times).",
+           "</div>"))
+```
+
+```{r}
+# Weekday vs weekend plot
+ggplot(latest_data, aes(x = weekend_weekday)) +
+  geom_bar(fill = "#e74c3c", alpha = 0.8) +
+  labs(title = "Meal Preparation: Weekday vs Weekend",
+       x = "Day Type",
+       y = "Count") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5))
+```
+
+```{r}
+# Dynamic day comparison comment
+cat(paste0("<div class='summary-box'>",
+           day_counts$weekend_weekday[1], " meals (", day_counts$n[1], ") vs ",
+           day_counts$weekend_weekday[2], " meals (", day_counts$n[2], ") ",
+           "show differences in cooking frequency.",
+           "</div>"))
+```
+
+
+
+
+
+
+
+The best pet to have is a `r best_pet` of course!
+
+![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
